@@ -1,8 +1,8 @@
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.Random;
 
+//Samuel Tilley, Ciss-111-300, Program 10
 //The Stock class allows for creation of Stock objects as well as retrieval of their contents.
 class Stock {
 
@@ -57,13 +57,10 @@ class Portfolio {
         return stockHashMap.get(sSymbol);
     }
 
-    //Iterates through stocks and prints to console
     public void iterateThroughStocks() {
 
-        int x = 0;
         for (Stock i : stockHashMap.values()) {
-            x++;
-            System.out.println(x + ". " + i);
+            System.out.println( i);
         }
     }
 
@@ -90,12 +87,12 @@ public class Main {
             int letterInt = random.nextInt(25);
             stringBuilder.append(alphabet[letterInt]);
         }
+
         Stock stock = new Stock(stringBuilder.toString().toUpperCase(),priceTemp);
         return stock;
-
     }
 
-    //Main Method
+    //Main Method. Creates a random amount (20-30) stocks and then iterates through them.
     public static void main(String[] args) {
 
         Portfolio portfolio = new Portfolio();
